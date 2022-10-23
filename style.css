@@ -140,6 +140,15 @@ li button {
   }
 }
 
+@media (max-width: 430px) {
+  .task-form {
+    flex-direction: column;
+  }
+  .lists {
+    padding-top: 70px;
+  }
+}
+
 @keyframes append {
   from {
     transform: scale(0%);
