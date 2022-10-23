@@ -73,6 +73,7 @@ const addNewLi = () => {
         getMoveRightButton.parentElement.parentElement.classList[0]
       ) <= 2
     ) {
+      getMoveRightButton.removeAttribute("disabled");
       let actualIndex = tableOfMainElements.indexOf(
         getMoveRightButton.parentElement.parentElement.classList[0]
       );
@@ -80,9 +81,10 @@ const addNewLi = () => {
         getMoveRightButton.parentElement
       );
     } else {
-      return;
+      getMoveRightButton.setAttribute("disabled", "");
     }
   });
+
   getMoveLeftButton.addEventListener("click", () => {
     if (
       tableOfMainElements.indexOf(
@@ -96,7 +98,6 @@ const addNewLi = () => {
         getMoveLeftButton.parentElement
       );
     } else {
-      return;
     }
   });
 };

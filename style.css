@@ -107,9 +107,30 @@ li {
   display: flex;
   gap: 30px;
 }
+.backlog .move-left {
+  display: none;
+}
+.done .move-right {
+  display: none;
+}
 
 li {
   animation: append linear 0.5s;
+}
+
+@media (max-width: 1079px) {
+  .main-wrapper {
+    flex-direction: column;
+  }
+  .lists {
+    flex-direction: column;
+  }
+  .move-left::after {
+    content: "\2BC5";
+  }
+  .move-right::after {
+    content: "\2BC6";
+  }
 }
 
 @keyframes append {
