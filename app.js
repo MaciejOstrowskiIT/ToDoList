@@ -16,24 +16,6 @@ form.addEventListener("submit", (e) => {
   addNewLi();
 });
 
-taskArray.forEach((element) => {
-  const li = document.createElement("li");
-  li.appendChild(document.createTextNode(element));
-  backlog.appendChild(li);
-  const section = document.createElement("section");
-  li.appendChild(section);
-  const deleteButton = document.createElement("button");
-  section.appendChild(deleteButton);
-  deleteButton.classList.add("delete-button");
-
-  const moveLeft = document.createElement("button");
-  section.appendChild(moveLeft);
-  moveLeft.classList.add("move-left");
-  const moveRight = document.createElement("button");
-  section.appendChild(moveRight);
-  moveRight.classList.add("move-right");
-});
-
 const addNewLi = () => {
   const li = document.createElement("li");
   li.appendChild(document.createTextNode(taskArray[taskArray.length - 1]));
