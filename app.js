@@ -20,39 +20,42 @@ taskArray.forEach((element) => {
   const li = document.createElement("li");
   li.appendChild(document.createTextNode(element));
   backlog.appendChild(li);
+  const section = document.createElement("section");
+  li.appendChild(section);
   const deleteButton = document.createElement("button");
-  li.appendChild(deleteButton);
+  section.appendChild(deleteButton);
   deleteButton.classList.add("delete-button");
 
   const moveLeft = document.createElement("button");
-  li.appendChild(moveLeft);
+  section.appendChild(moveLeft);
   moveLeft.classList.add("move-left");
   const moveRight = document.createElement("button");
-  li.appendChild(moveRight);
+  section.appendChild(moveRight);
   moveRight.classList.add("move-right");
 });
 
 const addNewLi = () => {
   const li = document.createElement("li");
-  li.appendChild(document.createTextNode(taskArray[taskArray.length - 1]))
-    .insertBefore;
+  li.appendChild(document.createTextNode(taskArray[taskArray.length - 1]));
   backlog.appendChild(li);
+  const section = document.createElement("section");
+  li.appendChild(section);
   const deleteButton = document.createElement("button");
-  li.appendChild(deleteButton);
+  section.appendChild(deleteButton);
   deleteButton.classList.add("delete-button");
   const deleteButtonEvent = document.querySelector(
     "li:last-child .delete-button"
   );
 
   deleteButtonEvent.addEventListener("click", () => {
-    deleteButtonEvent.parentElement.style.display = "none";
+    deleteButtonEvent.parentElement.parentElement.style.display = "none";
   });
 
   const moveLeft = document.createElement("button");
-  li.appendChild(moveLeft);
+  section.appendChild(moveLeft);
   moveLeft.classList.add("move-left");
   const moveRight = document.createElement("button");
-  li.appendChild(moveRight);
+  section.appendChild(moveRight);
   moveRight.classList.add("move-right");
 
   const getArticleNames = document.querySelectorAll("article");
@@ -70,34 +73,37 @@ const addNewLi = () => {
   getMoveRightButton.addEventListener("click", () => {
     if (
       tableOfMainElements.indexOf(
-        getMoveRightButton.parentElement.parentElement.classList[0]
+        getMoveRightButton.parentElement.parentElement.parentElement
+          .classList[0]
       ) <= 2
     ) {
       getMoveRightButton.removeAttribute("disabled");
       let actualIndex = tableOfMainElements.indexOf(
-        getMoveRightButton.parentElement.parentElement.classList[0]
+        getMoveRightButton.parentElement.parentElement.parentElement
+          .classList[0]
       );
       getArticleNames[actualIndex + 1].appendChild(
-        getMoveRightButton.parentElement
+        getMoveRightButton.parentElement.parentElement
       );
     } else {
-      getMoveRightButton.setAttribute("disabled", "");
+      return;
     }
   });
 
   getMoveLeftButton.addEventListener("click", () => {
     if (
       tableOfMainElements.indexOf(
-        getMoveLeftButton.parentElement.parentElement.classList[0]
+        getMoveLeftButton.parentElement.parentElement.parentElement.classList[0]
       ) > 0
     ) {
       let actualIndex = tableOfMainElements.indexOf(
-        getMoveLeftButton.parentElement.parentElement.classList[0]
+        getMoveLeftButton.parentElement.parentElement.parentElement.classList[0]
       );
       getArticleNames[actualIndex - 1].appendChild(
-        getMoveLeftButton.parentElement
+        getMoveLeftButton.parentElement.parentElement
       );
     } else {
+      return;
     }
   });
 };

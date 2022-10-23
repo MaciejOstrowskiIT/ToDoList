@@ -64,10 +64,13 @@ li {
   box-sizing: border-box;
   box-shadow: 0px 0px 4px 4px rgb(223, 223, 223);
   margin: 10px;
+  flex-wrap: wrap;
 }
 
 .delete-button::after {
-  content: "\1F5D1";
+  content: "\274C";
+}
+.delete-button {
 }
 .move-left::after {
   content: "\1F878";
@@ -116,6 +119,10 @@ li {
 
 li {
   animation: append linear 0.5s;
+}
+
+li button {
+  justify-content: flex-end;
 }
 
 @media (max-width: 1079px) {
