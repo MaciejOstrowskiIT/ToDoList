@@ -72,8 +72,8 @@ const addNewLi = () => {
   getMoveRightButton.addEventListener("click", () => {
     if (
       tableOfMainElements.indexOf(
-        getMoveRightButton.parentElement.parentElement.classList[0] < 2
-      )
+        getMoveRightButton.parentElement.parentElement.classList[0]
+      ) <= 2
     ) {
       let actualIndex = tableOfMainElements.indexOf(
         getMoveRightButton.parentElement.parentElement.classList[0]
@@ -81,13 +81,15 @@ const addNewLi = () => {
       getArticleNames[actualIndex + 1].appendChild(
         getMoveRightButton.parentElement
       );
+    } else {
+      return;
     }
   });
   getMoveLeftButton.addEventListener("click", () => {
     if (
       tableOfMainElements.indexOf(
-        getMoveLeftButton.parentElement.parentElement.classList[0] < 0
-      )
+        getMoveLeftButton.parentElement.parentElement.classList[0]
+      ) > 0
     ) {
       let actualIndex = tableOfMainElements.indexOf(
         getMoveLeftButton.parentElement.parentElement.classList[0]
@@ -95,6 +97,8 @@ const addNewLi = () => {
       getArticleNames[actualIndex - 1].appendChild(
         getMoveLeftButton.parentElement
       );
+    } else {
+      return;
     }
   });
 };
