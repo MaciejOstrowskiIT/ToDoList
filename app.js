@@ -44,10 +44,8 @@ const addNewLi = () => {
     "li:last-child .delete-button"
   );
 
-  deleteButtonEvent.addEventListener;
   deleteButtonEvent.addEventListener("click", () => {
     deleteButtonEvent.parentElement.style.display = "none";
-    console.log(e);
   });
 
   const moveLeft = document.createElement("button");
