@@ -5,6 +5,12 @@ const backlog = document.querySelector(".backlog");
 
 let taskArray = [];
 
+let i = 0;
+
+if (localStorage.getItem("items")) {
+  taskArray.push(...JSON.parse(localStorage.items));
+}
+
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   console.log(textbox.value);
@@ -14,11 +20,13 @@ form.addEventListener("submit", (e) => {
   taskArray.push(textbox.value);
   textbox.value = "";
   addNewLi();
+  localStorage.setItem("items", JSON.stringify(taskArray));
+  i++;
 });
 
 const addNewLi = () => {
   const li = document.createElement("li");
-  li.appendChild(document.createTextNode(taskArray[taskArray.length - 1]));
+  li.appendChild(document.createTextNode(taskArray[i]));
   backlog.appendChild(li);
   const section = document.createElement("section");
   li.appendChild(section);
@@ -31,6 +39,11 @@ const addNewLi = () => {
 
   deleteButtonEvent.addEventListener("click", () => {
     deleteButtonEvent.parentElement.parentElement.style.display = "none";
+
+    const getValueOfElement =
+      deleteButtonEvent.parentElement.parentElement.childNodes[0].textContent;
+    taskArray.splice(taskArray.indexOf(getValueOfElement), 1);
+    localStorage.setItem("items", JSON.stringify(taskArray));
   });
 
   const moveLeft = document.createElement("button");
@@ -89,3 +102,9 @@ const addNewLi = () => {
     }
   });
 };
+
+document.addEventListener("DOMContentLoaded", () => {
+  for (i; i < taskArray.length; i++) {
+    addNewLi();
+  }
+});
