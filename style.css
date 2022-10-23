@@ -133,10 +133,10 @@ li button {
     flex-direction: column;
   }
   .move-left::after {
-    content: "\2BC5";
+    content: "\1F53C";
   }
   .move-right::after {
-    content: "\2BC6";
+    content: "\1F53D";
   }
 }
 
