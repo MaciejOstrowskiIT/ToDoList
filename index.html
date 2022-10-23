@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <nav>MacOst</nav>
+    <section class="main-wrapper">
+      <header>
+        <form action="" id="addTask">
+          <input type="text" id="textbox" placeholder="New task name" />
+          <button type="submit">Create Task</button>
+        </form>
+      </header>
+      <section class="lists">
+        <article class="backlog">
+          <header>Backlog</header>
+          <ul class="backlog-list task"></ul>
+        </article>
+
+        <article class="todo">
+          <header>To Do</header>
+          <ul class="todo-list task"></ul>
+        </article>
+
+        <article class="ongoing">
+          <header>Ongoing</header>
+          <ul class="ongoing-list task"></ul>
+        </article>
+
+        <article class="done">
+          <header>Done</header>
+          <ul class="done-list task"></ul>
+        </article>
+      </section>
+    </section>
+  </body>
+</html>

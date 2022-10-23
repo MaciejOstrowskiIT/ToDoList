@@ -1,0 +1,76 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  background-color: rgb(220, 220, 220);
+}
+
+nav {
+  background-color: rgb(57, 57, 57);
+  color: green;
+  text-align: center;
+  font-size: larger;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  padding: 20px;
+}
+
+.main-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-wrapper header {
+  padding-top: 70px;
+  height: 100px;
+  align-self: center;
+  justify-self: center;
+}
+
+.lists {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+}
+
+.lists article {
+  background-color: white;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.lists article header {
+  font-size: 30px;
+}
+
+.task {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  list-style: none;
+  padding: 10px;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 4px 4px rgb(223, 223, 223);
+  margin: 10px;
+}
+
+.delete-button::after {
+  content: "del";
+}
+.move-left::after {
+  content: "left";
+}
+.move-right::after {
+  content: "right";
+}
